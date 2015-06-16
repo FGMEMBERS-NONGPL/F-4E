@@ -31,6 +31,10 @@ Julien Pierru - textures, research
 
 
 Dave Culp  
-davidculp@cox.net
+daveculp@cox.net
+http://daveshangar.blogspot.com/
+http://dl.dropboxusercontent.com/u/12562954/hangar/hangar.html
+
+
  
 

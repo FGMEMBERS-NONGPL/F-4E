@@ -129,7 +129,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">      18000.0 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  7000.0 </damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  9000.0 </damping_coeff>
    <max_steer unit="DEG"> 60.00 </max_steer>
    <brake_group>NONE</brake_group>
    <retractable>1</retractable>
@@ -145,7 +145,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">      41000.0 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  8500.0 </damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 28500.0 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>LEFT</brake_group>
    <retractable>1</retractable>
@@ -161,7 +161,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">      41000.0 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  8500.0 </damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 28500.0 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
    <retractable>1</retractable>
@@ -175,7 +175,7 @@
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      61795.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">      11795.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC"> 12359.00 </damping_coeff>
  </contact>
 
@@ -187,19 +187,19 @@
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      61795.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">      11795.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC"> 12359.00 </damping_coeff>
  </contact>
 
   <contact type="STRUCTURE" name="AFT_FUSELAGE">
     <location unit="IN">
-     <x> 600 </x>
+     <x> 300 </x>
      <y>   0 </y>
      <z>   0 </z>
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      40000.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">      10000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  8000.00 </damping_coeff>
  </contact>
 
@@ -211,7 +211,7 @@
     </location>
     <static_friction>  0.80 </static_friction>
     <dynamic_friction> 0.50 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">      40000.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">      10000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  8000.00 </damping_coeff>
  </contact>
 
@@ -228,7 +228,6 @@
     <feed>0</feed>
     <feed>1</feed>
     <feed>2</feed>
-    <feed>3</feed>
     <thruster file="direct">
      <location unit="IN">
        <x> 190 </x>
@@ -252,7 +251,6 @@
     <feed>0</feed>
     <feed>1</feed>
     <feed>2</feed>
-    <feed>3</feed>
     <thruster file="direct">
      <location unit="IN">
        <x> 190 </x>
@@ -275,13 +273,13 @@
        <z> -6.0 </z>
      </location>
      <priority>2</priority>
-     <density unit="LBS/GAL"> 6.48 </density>
+     <type>JP-4</type>
      <capacity unit="LBS"> 13160.00 </capacity>
      <contents unit="LBS"> 13000.00 </contents>
      <standpipe unit="LBS"> 2000.00 </standpipe>
   </tank>
 
-  <!-- Centerline 600 gallon drop tank -->
+  <!-- Centerline 600 gallon drop tank
   <tank type="FUEL" number="1">
      <location unit="IN">
        <x>     0 </x>
@@ -292,6 +290,7 @@
      <capacity unit="LBS"> 3950.00 </capacity>
      <contents unit="LBS">    0 </contents>
   </tank>
+  -->
 
   <!-- Left 370 gallon drop tank -->
   <tank type="FUEL" number="2">
@@ -300,7 +299,7 @@
        <y> -139.0 </y>
        <z>  -30.0 </z>
      </location>
-     <density unit="LBS/GAL"> 6.48 </density>
+     <type>JP-4</type>
      <capacity unit="LBS"> 2440.00 </capacity>
      <contents unit="LBS"> 1000.00 </contents>
   </tank>
@@ -312,7 +311,7 @@
        <y>  139.0 </y>
        <z>  -30.0 </z>
      </location>
-     <density unit="LBS/GAL"> 6.48 </density>
+     <type>JP-4</type>
      <capacity unit="LBS"> 2440.00 </capacity>
      <contents unit="LBS"> 1000.00 </contents>
   </tank>
@@ -741,7 +740,7 @@
 
   </axis>
 
-    <function name="aero/qSbw">
+    <function name="aero/qSbwy">
        <description>Yaw_moment_dimensionalizer</description>
        <product>
            <property>aero/qbar-area</property>
@@ -749,7 +748,7 @@
        </product>
     </function>
 
-    <function name="aero/qSbwr">
+    <function name="aero/qSbwry">
        <description>Yaw_moment_yaw_rate_dimensionalizer</description>
        <product>
            <property>aero/qSbw</property>
@@ -798,11 +797,11 @@
              <property>aero/coefficient/Cndr</property>
              <property>aero/coefficient/Cnda</property>
            </sum>
-           <property>aero/qSbw</property>
+           <property>aero/qSbwy</property>
          </product>
          <product>
             <property>aero/coefficient/Cnr</property>
-            <property>aero/qSbwr</property>
+            <property>aero/qSbwry</property>
          </product>
        </sum>
     </function>

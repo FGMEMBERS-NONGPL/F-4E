@@ -78,7 +78,7 @@
   </submodel>
 
   <submodel>
-    <name>drop bomb1, station 2</name>
+    <name>bomb1, station 2, (500 pound)</name>
     <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
     <trigger>fdm/jsbsim/systems/armament/bomb1/released</trigger>
     <trigger-once>true</trigger-once>
@@ -93,14 +93,14 @@
     <weight>520.0</weight>
     <cd>0.3</cd>
     <collision>true</collision>
-    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
     <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
   </submodel>
 
   <submodel>
-    <name>drop bomb2, station 2</name>
+    <name>bomb2, station 2, (500 pound)</name>
     <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
     <trigger>fdm/jsbsim/systems/armament/bomb2/released</trigger>
     <trigger-once>true</trigger-once>
@@ -115,14 +115,14 @@
     <weight>520.0</weight>
     <cd>0.3</cd>
     <collision>true</collision>
-    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
     <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
   </submodel>
 
   <submodel>
-    <name>drop bomb3, station 2</name>
+    <name>bomb3, station 2, (500 pound)</name>
     <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
     <trigger>fdm/jsbsim/systems/armament/bomb3/released</trigger>
     <trigger-once>true</trigger-once>
@@ -137,14 +137,14 @@
     <weight>520.0</weight>
     <cd>0.3</cd>
     <collision>true</collision>
-    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
     <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
   </submodel>
 
   <submodel>
-    <name>drop bomb4, station 4</name>
+    <name>bomb4, station 4, (500 pound)</name>
     <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
     <trigger>fdm/jsbsim/systems/armament/bomb4/released</trigger>
     <trigger-once>true</trigger-once>
@@ -159,14 +159,14 @@
     <weight>520.0</weight>
     <cd>0.3</cd>
     <collision>true</collision>
-    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
     <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
   </submodel>
 
   <submodel>
-    <name>drop bomb5, station 4</name>
+    <name>bomb5, station 4, (500 pound)</name>
     <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
     <trigger>fdm/jsbsim/systems/armament/bomb5/released</trigger>
     <trigger-once>true</trigger-once>
@@ -181,14 +181,14 @@
     <weight>520.0</weight>
     <cd>0.3</cd>
     <collision>true</collision>
-    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
     <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
   </submodel>
 
   <submodel>
-    <name>drop bomb6, station 4</name>
+    <name>bomb6, station 4, (500 pound)</name>
     <model>Aircraft/DavePack/Stores/Mk82/mk82.xml</model>
     <trigger>fdm/jsbsim/systems/armament/bomb6/released</trigger>
     <trigger-once>true</trigger-once>
@@ -203,14 +203,14 @@
     <weight>520.0</weight>
     <cd>0.3</cd>
     <collision>true</collision>
-    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
+    <collision-report>sim/ai/aircraft/collision/bomb</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/droptank</impact-report>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
     <submodel-path>Aircraft/DavePack/Stores/Mk82/MK-82-submodels.xml</submodel-path>
   </submodel>
 
   <submodel>
-    <name>gun-tracer</name>
+    <name>tracer</name>
     <model>Aircraft/DavePack/Stores/guns/tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
@@ -229,7 +229,7 @@
   </submodel>
 
   <submodel>
-    <name>gun-bullet</name>
+    <name>bullet (cannon)</name>
     <model>Models/Geometry/null.ac</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2840.0</speed>
@@ -246,9 +246,9 @@
     <cd>0.193</cd>
     <eda>0.00136354</eda> 
     <collision>true</collision>
-    <collision-report>sim/ai/aircraft/collision/bullet</collision-report>
+    <collision-report>sim/ai/aircraft/collision/cannon</collision-report>
     <impact>true</impact>
-    <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
+    <impact-report>sim/ai/aircraft/impact/cannon</impact-report>
     <submodel-path>Aircraft/DavePack/Stores/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 

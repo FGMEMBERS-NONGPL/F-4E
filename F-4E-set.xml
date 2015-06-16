@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 
+<!-- License:  Creative Commons, CC-BY-NC-SA   -->
+<!-- Author:   David Culp, Alpha Simulations   -->
+<!-- Email:    daveculp@cox.net                -->
+
 <PropertyList>
 
  <sim>
@@ -168,19 +172,30 @@
 
   <multiplay>
     <generic>
-     <int n="0" type="int">0</int>
-     <int n="1" type="int">0</int>
-     <int n="2" type="int">0</int>
-     <int n="3" type="int">0</int>
-     <int n="4" type="int">0</int>
-     <int n="5" type="int">0</int>
-     <int n="6" type="int">0</int>
-     <int n="7" type="int">0</int>
-     <int n="8" type="int">0</int>
-     <int n="9" type="int">0</int>
-     <int n="10" type="int">0</int>
-     <int n="11" type="int">0</int>
-     <int n="12" type="int">0</int>
+<!-- <float n="0"/> --> <!-- rotating beacon amplitude --> 
+<!-- <float n="1"/> --> <!-- nose wheel steering angle --> 
+<!-- <float n="6"/> --> <!-- drag chute position/shape --> 
+     <int n="0" type="int">0</int> <!-- unused -->
+     <int n="1" type="int">0</int> <!-- unused -->
+     <int n="2" type="int">0</int> <!-- unused -->
+     <int n="3" type="int">0</int> <!-- unused -->
+     <int n="4" type="int">0</int> <!-- wingtip vortex trigger-->
+     <int n="5" type="int">0</int> <!-- engines contrail trigger -->
+     <int n="6" type="int">0</int> <!-- drag chute trigger -->
+     <int n="7" type="int">0</int> <!-- unused -->
+     <int n="8" type="int">0</int> <!-- unused -->
+     <int n="9" type="int">0</int> <!-- unused -->
+     <int n="10" type="int">0</int> <!-- left engine afterburner flame -->
+     <int n="11" type="int">0</int> <!-- right engine afterburner flame -->
+     <int n="12" type="int">0</int> <!-- unused -->
+     <int n="13" alias="controls/armament/trigger"/> <!-- for "bombable" cannon -->
+     <int n="14" alias="fdm/jsbsim/systems/armament/bomb1/released"/> <!-- for "bombable" bomb -->
+     <int n="15" alias="fdm/jsbsim/systems/armament/bomb2/released"/> <!-- for "bombable" bomb -->
+     <int n="16" alias="fdm/jsbsim/systems/armament/bomb3/released"/> <!-- for "bombable" bomb -->
+     <int n="17" alias="fdm/jsbsim/systems/armament/bomb4/released"/> <!-- for "bombable" bomb -->
+     <int n="18" alias="fdm/jsbsim/systems/armament/bomb5/released"/> <!-- for "bombable" bomb -->
+     <int n="19" alias="fdm/jsbsim/systems/armament/bomb6/released"/> <!-- for "bombable" bomb -->
+     <string n="9" type="string"/> <!-- for "bombable" communication -->
     </generic>
   </multiplay>
 
@@ -241,12 +256,12 @@
       <binding>
        <command>property-assign</command>
        <property>fdm/jsbsim/systems/chute/deploy</property>
-       <value>0</value>
+       <value type="int">0</value>
       </binding>
       <binding>
        <command>property-assign</command>
        <property>controls/flight/chute_jettisoned</property>
-       <value>1</value>
+       <value type="int">1</value>
       </binding>
     </key>
 
@@ -468,21 +483,9 @@
      <sim-time-sec>0</sim-time-sec>
    </simulation>
    <systems>
-    <hook>
-      <tailhook-cmd-norm type="double">0</tailhook-cmd-norm> 
-    </hook>
-    <holdback>
-      <holdback-cmd type="double">0</holdback-cmd>
-    </holdback>
-    <refuel>
-      <armed type="double">0</armed>
-    </refuel>
     <dump>
       <armed type="double">0</armed>
     </dump>
-    <NWS>
-      <engaged type="double">0</engaged>
-    </NWS>
     <radar>
       <range type="int">40</range>
     </radar>
@@ -531,6 +534,11 @@
 
 
  <instrumentation>
+  <transponder>
+    <serviceable>true</serviceable>
+    <id-code>1200</id-code>
+    <mode-switch>4</mode-switch>
+  </transponder>
   <marker-beacon>
     <volume type="double" archive="y">0.0</volume>
   </marker-beacon>
@@ -543,7 +551,17 @@
  <systems>
    <refuel>
      <contact type="bool">false</contact>
+     <type>boom</type>
    </refuel>
  </systems>
+
+ <nasal>
+   <aar>
+     <file>Aircraft/DavePack/Nasal/aar_jsbsim.nas</file>
+   </aar>
+   <init>
+     <file>Aircraft/DavePack/Nasal/version.nas</file>
+   </init>
+ </nasal>
 
 </PropertyList>

@@ -67,7 +67,7 @@
            <value>0.016667</value>
          </product>
        </function>
-       <output>gear/tailhook-pos-norm</output>
+       <output>gear/tailhook-position-norm</output>
      </fcs_function>
 
   </channel>

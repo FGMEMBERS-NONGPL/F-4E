@@ -136,9 +136,18 @@
  <model>
   <path>Aircraft/F-4E/Models/Instruments/Gear/gear.xml</path>
   <offsets>
-   <x-m>-6.147</x-m>
+   <x-m>-6.155</x-m>
    <y-m>-0.24</y-m>
    <z-m>1.09</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/DavePack/Instruments/Gear/park-brake-light.xml</path>
+  <offsets>
+   <x-m>-6.158</x-m>
+   <y-m>-0.22</y-m>
+   <z-m> 1.14</z-m>
   </offsets>
  </model>
 
@@ -432,8 +441,17 @@
 
 <!-- ********************** effects **********************-->
 
+
+ <!-- Old Afterburner Flame - left -->
  <model>
   <path>Aircraft/DavePack/Effects/Afterburner/plume-1-mp.xml</path>
+   <condition>
+       <less-than>
+           <property>sim/version/fgversion</property>
+           <value>350</value>
+       </less-than>    
+       <property>engines/engine[0]/augmentation</property>
+   </condition>
    <offsets>
      <x-m>4.4</x-m>
      <y-m>-0.7</y-m>
@@ -442,8 +460,16 @@
    </offsets>
  </model>
 
+ <!-- Old Afterburner Flame - right -->
  <model>
   <path>Aircraft/DavePack/Effects/Afterburner/plume-2-mp.xml</path>
+   <condition>
+       <less-than>
+           <property>sim/version/fgversion</property>
+           <value>350</value>
+       </less-than>    
+       <property>engines/engine[1]/augmentation</property>
+   </condition>
    <offsets>
      <x-m>4.4</x-m>
      <y-m>0.7</y-m>
@@ -451,7 +477,46 @@
      <pitch-deg>2</pitch-deg>
    </offsets>
  </model>
+  
 
+  <!-- New Afterburner flame - left -->
+  <model>
+   <name>AB_Flame</name>
+   <path>Aircraft/DavePack/Effects/Afterburner/afterburner.xml</path>
+    <condition>
+      <greater-than>
+         <property>sim/version/fgversion</property>
+         <value>349</value>
+      </greater-than>    
+      <property>engines/engine[0]/augmentation</property>
+    </condition>
+    <offsets>
+     <x-m>4.4</x-m>
+     <y-m>-0.7</y-m>
+     <z-m>0.1</z-m>
+     <pitch-deg>4</pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- New Afterburner flame - right -->
+  <model>
+   <name>AB_Flame</name>
+   <path>Aircraft/DavePack/Effects/Afterburner/afterburner.xml</path>
+    <condition>
+      <greater-than>
+         <property>sim/version/fgversion</property>
+         <value>349</value>
+      </greater-than>    
+      <property>engines/engine[1]/augmentation</property>
+    </condition>
+    <offsets>
+     <x-m>4.4</x-m>
+     <y-m>0.7</y-m>
+     <z-m>0.1</z-m>
+     <pitch-deg>4</pitch-deg>
+    </offsets>
+  </model>
+ 
  <model>
   <path>Aircraft/DavePack/Effects/Vortex/condensation-left.xml</path>
    <offsets>
@@ -484,7 +549,7 @@
 
   <!-- Contrail-left -->
   <model>
-    <path>Aircraft/DavePack/Effects/Contrail/contrail-left.xml</path>
+    <path>Aircraft/DavePack/Effects/Contrail/contrail-engine-1.xml</path>
     <offsets>
       <x-m>  12.0 </x-m>
       <y-m>  -0.7 </y-m>
@@ -494,13 +559,25 @@
 
   <!-- Contrail-right -->
   <model>
-    <path>Aircraft/DavePack/Effects/Contrail/contrail-right.xml</path>
+    <path>Aircraft/DavePack/Effects/Contrail/contrail-engine-2.xml</path>
     <offsets>
       <x-m>  12.0 </x-m>
       <y-m>   0.7 </y-m>
       <z-m>   0.0 </z-m>
     </offsets>
   </model>
+
+  <!-- Glass shader -->
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>FwdCanopyGlass</object-name>
+    <object-name>RearGlass</object-name>
+    <object-name>MiddleGlass</object-name>
+    <object-name>windscreen-glass</object-name>
+  </animation>
+
 
 
 <!-- ******************** animations ********************-->
@@ -607,8 +684,8 @@
   <object-name>LNoseTire</object-name>
   <object-name>RNoseTire</object-name>
   <object-name>NoseGearAxle</object-name>
-  <property>sim/multiplay/generic/float[2]</property>
-  <factor>60</factor>
+  <property>sim/multiplay/generic/float[1]</property>
+  <factor>1</factor>
   <center>
    <x-m>-6.645</x-m>
    <y-m>0</y-m>
@@ -647,7 +724,7 @@
   <object-name>LNoseTire</object-name>
   <object-name>RNoseTire</object-name>
   <property>fdm/jsbsim/gear/unit[0]/wheel-speed-fps</property>
-  <factor>89.55</factor>
+  <factor>15</factor>
   <center>
    <x-m>-6.644</x-m>
    <y-m>0</y-m>
@@ -733,7 +810,7 @@
   <type>spin</type>
   <object-name>LMainTire</object-name>
   <property>fdm/jsbsim/gear/unit[1]/wheel-speed-fps</property>
-  <factor>42.59</factor>
+  <factor>7</factor>
   <center>
    <x-m>0.767</x-m>
    <y-m>-2.92</y-m>
@@ -820,7 +897,7 @@
   <type>spin</type>
   <object-name>RMainTire</object-name>
   <property>fdm/jsbsim/gear/unit[2]/wheel-speed-fps</property>
-  <factor>42.59</factor>
+  <factor>7</factor>
   <center>
    <x-m>0.767</x-m>
    <y-m>2.92</y-m>
@@ -1155,23 +1232,6 @@
   </axis>
  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>probe</object-name>
-  <property>fdm/jsbsim/systems/refuel/probe-pos-norm</property>
-  <factor>30</factor>
-  <center>
-   <x-m>-2.96</x-m>
-   <y-m>0.5114</y-m>
-   <z-m>1.126</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>0.5</y>
-   <z>-0.4</z>
-  </axis>
- </animation>
-
  <!-- Suppress Pilot/Seat Model in Cockpit View -->
  <animation>
   <type>select</type>
@@ -1270,6 +1330,25 @@
    <z>0</z>
   </axis>
  </animation>
+ 
+  <!-- Refueling Box -->
+ <animation>
+  <type>rotate</type>
+  <object-name>RefuelPort</object-name>
+  <property>fdm/jsbsim/systems/refuel/probe-pos-norm</property>
+  <factor>30</factor>
+  <center>
+   <x-m>-0.99507</x-m>
+   <y-m>0</y-m>
+   <z-m>1.72</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 
 </PropertyList>
  
